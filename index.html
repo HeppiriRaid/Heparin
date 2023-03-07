@@ -1,0 +1,68 @@
+<div class="cube">
+  <div class="face front">Front</div>
+  <div class="face back">Back</div>
+  <div class="face left">Left</div>
+  <div class="face right">Right</div>
+  <div class="face top">Top</div>
+  <div class="face bottom">Bottom</div>
+</div>
+
+<style>
+.cube {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spin 3s linear infinite;
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.front {
+  background-color: red;
+  transform: translateZ(100px);
+}
+
+.back {
+  background-color: blue;
+  transform: translateZ(-100px) rotateY(180deg);
+}
+
+.left {
+  background-color: green;
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.right {
+  background-color: orange;
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.top {
+  background-color: purple;
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+.bottom {
+  background-color: yellow;
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+</style>
